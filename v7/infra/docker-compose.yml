@@ -1,0 +1,62 @@
+version: '3.7'
+services:
+  selenoid:
+    networks:
+      - default
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    image: aerokube/selenoid:latest-release
+    container_name: selenoid
+    ports:
+      - '4444:4444'
+    command:
+      [
+        '-conf',
+        '/etc/selenoid/browsers.json',
+        '-limit',
+        '2',
+        '-timeout',
+        '7m',
+        '-session-attempt-timeout',
+        '1m',
+        '-session-delete-timeout',
+        '1m',
+        '-service-startup-timeout',
+        '1m',
+        '-graceful-period',
+        '20s',
+        '-log-output-dir',
+        '/opt/selenoid/logs',
+        '-container-network',
+        'infra_default'
+      ]
+    volumes:
+      - './conf/selenoid/config:/etc/selenoid'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './conf/selenoid/logs/:/opt/selenoid/logs'
+    privileged: true
+
+  selenoid_dependency1:
+    image: selenoid/chrome:95.0
+
+  selenoidUI:
+    networks:
+      - default
+    image: aerokube/selenoid-ui:latest
+    container_name: selenoidUI
+    links:
+      - selenoid
+    ports:
+      - '8888:8080'
+    privileged: true
+    command: ['--selenoid-uri', 'http://selenoid:4444']
+    healthcheck:
+      test: ['CMD', '/health-check']
+      interval: '30s'
+      timeout: '10s'
+      start_period: '5s'
+      retries: 3
+
+networks:
+  default:
+    driver: bridge
