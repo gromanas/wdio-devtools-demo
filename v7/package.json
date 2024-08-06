@@ -1,4 +1,5 @@
 {
+	"name": "wdio-v7-devtools-demo",
 	"scripts": {
 		"infra:selenoid-m1": "COMPOSE_HTTP_TIMEOUT=500 docker compose -f infra/docker-compose-m1.yml up -d",
 		"infra:selenoid": "COMPOSE_HTTP_TIMEOUT=500 docker compose -f infra/docker-compose.yml up -d",

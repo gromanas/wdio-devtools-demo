@@ -11,14 +11,8 @@
     "@wdio/mocha-framework": "^8.39.0",
     "@wdio/spec-reporter": "^8.39.0"
   },
-  "pnpm": {
-    "overrides": {
-      "puppeteer-core": "22.14.0"
-    }
-  },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js",
-    "wdio-selenoid": "wdio run ./wdio.selenoid.conf.js"
+    "wdio": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
     "devtools": "^8.39.1"

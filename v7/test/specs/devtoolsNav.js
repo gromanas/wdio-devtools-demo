@@ -1,5 +1,5 @@
 
-describe("DevTools Test on latest chrome", function() {
+describe("DevTools Test on previous versions of chrome until 102", function() {
     it("Devtools Navigation", async function() {
         await browser.url("https://pixijs.io/examples-v5/#/demos-basic/container.js");
         await browser.pause(5000);
