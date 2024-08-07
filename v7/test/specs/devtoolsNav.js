@@ -8,7 +8,7 @@ describe("DevTools Test on previous versions of chrome until 102", function() {
         const puppeteer = await browser.getPuppeteer();
 
         // Get all targets from the current window
-        const targets = await puppeteer.targets();
+        const targets = puppeteer.targets();
 
         // Filter all targets and select the one starts from 'devtools://'
         const devtoolsTarget = await targets.find((t) => {
