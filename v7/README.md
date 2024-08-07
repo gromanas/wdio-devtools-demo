@@ -1,10 +1,11 @@
-# WebdriverIO v8 DevTools Demo
+# WebdriverIO v7 DevTools Demo
 
-This project demonstrates the use of WebdriverIO v8 with Chrome DevTools. The setup requires Node.js v20.
+This project demonstrates the use of WebdriverIO v7 with Chrome DevTools. The setup requires Node.js v14 and Docker to run a specific version of the Chrome/Chromium browser.
 
 ## Prerequisites
 
-- Node.js v20
+- Node.js v14
+- Docker
 
 ## Setup Instructions
 
@@ -14,10 +15,10 @@ This project demonstrates the use of WebdriverIO v8 with Chrome DevTools. The se
     git clone https://github.com/gromanas/wdio-devtools-demo.git
     ```
 
-2. **Navigate to the v8 Folder**
+2. **Navigate to the v7 Folder**
 
     ```bash
-    cd v8
+    cd v7
     ```
 
 3. **Install Dependencies**
@@ -26,15 +27,33 @@ This project demonstrates the use of WebdriverIO v8 with Chrome DevTools. The se
     npm install
     ```
 
-4. **Run WebdriverIO Tests**
+4. **Start Selenoid**
+
+   - For M1 Processors:
+
+       ```bash
+       npm run infra:selenoid-m1
+       ```
+
+   - For Intel Processors:
+
+       ```bash
+       npm run infra:selenoid
+       ```
+
+5. **Run WebdriverIO Tests**
 
     ```bash
     npm run wdio
     ```
 
+6. **Access the Selenoid UI**
+
+   Open your browser and go to: [http://localhost:8888](http://localhost:8888) to view the container and access the test case.
+
 ## Demonstration
 
-![DevTools v8](assets/DevTools_v8.gif)
+![DevTools v7](assets/DevTools_v7.gif)
 
 ## Example Used for Demonstration
 
@@ -52,4 +71,5 @@ We are also using a Chrome extension that extends the Chrome DevTools panel for 
 
 ## Additional Information
 
-For detailed WebdriverIO v8 setup instructions, refer to the [official documentation](https://webdriver.io/docs/gettingstarted).
+For detailed WebdriverIO v7 setup instructions, refer to the [official documentation](https://v7.webdriver.io/docs/gettingstarted).
+
