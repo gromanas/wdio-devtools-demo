@@ -1,4 +1,5 @@
 import {$, browser} from "@wdio/globals";
+import { Key } from "webdriverio";
 
 describe("DevTools Test on latest chrome", function() {
     it("Devtools Navigation", async function() {
@@ -14,8 +15,8 @@ describe("DevTools Test on latest chrome", function() {
         await browser.switchToWindow(handles[1]);
 
         // Navigate through devtool tabs.
-        // For linux machines use ['Control', '['] .
-        await browser.keys(['Meta', '[']);
+        // For linux machines use [Key.Control, '['] .
+        await browser.keys([Key.Command, '[']);
 
         // Switch to devtool extension iframe.
         await browser.switchToFrame(0);
