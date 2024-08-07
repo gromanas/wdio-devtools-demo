@@ -53,7 +53,7 @@ This project demonstrates the use of WebdriverIO v7 with Chrome DevTools. The se
 
 ## Demonstration
 
-![DevTools v7](DevTools_v7.gif)
+![DevTools v7](assets/DevTools_v7.gif)
 
 ## Example Used for Demonstration
 
