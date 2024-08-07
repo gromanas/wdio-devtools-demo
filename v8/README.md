@@ -11,7 +11,7 @@ This project demonstrates the use of WebdriverIO v8 with Chrome DevTools. The se
 1. **Clone the Project Repository**
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/gromanas/wdio-devtools-demo.git
     ```
 
 2. **Navigate to the v8 Folder**
