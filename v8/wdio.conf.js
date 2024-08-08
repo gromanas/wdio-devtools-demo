@@ -14,5 +14,9 @@ export const config = {
             ]
         },
     }],
-    services: [['devtools']],
+    framework: "mocha",
+    mochaOpts: {
+        ui: "bdd",
+        timeout: 1000 * 60 * 5, // 5 min
+    },
 }
