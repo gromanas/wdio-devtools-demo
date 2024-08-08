@@ -13,9 +13,6 @@ export const config = {
                 fs.readFileSync(path.resolve('./PixiJS-Devtools-Chrome-Web-Store.crx'), 'base64')
             ]
         },
-        "goog:loggingPrefs": {
-            browser: "INFO",
-        },
     }],
     services: [['devtools']],
 }
