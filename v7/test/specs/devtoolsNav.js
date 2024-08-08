@@ -3,13 +3,12 @@ describe("DevTools Test on previous versions of chrome until 102", function() {
     it("Devtools Navigation", async function() {
         // Open an example game.
         await browser.url("https://pixijs.io/examples-v5/#/demos-basic/container.js");
-        await browser.pause(5000);
 
         // Get puppeteer instance from browser
         const puppeteer = await browser.getPuppeteer();
 
         // Get all targets from the current window
-        const targets = await puppeteer.targets();
+        const targets = puppeteer.targets();
 
         // Filter all targets and select the one starts from 'devtools://'
         const devtoolsTarget = await targets.find((t) => {
@@ -62,7 +61,5 @@ describe("DevTools Test on previous versions of chrome until 102", function() {
             var result = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
             result.singleNodeValue.click();
         });
-
-        await browser.pause(10000);
     });
 });

@@ -4,8 +4,6 @@ export const config = {
     specs: [
         './test/specs/**/*.js'
     ],
-    runner: 'local',
-    maxInstances: 1,
     capabilities: [{
         browserName: 'chrome',
         browserVersion: "stable",
@@ -15,15 +13,6 @@ export const config = {
                 fs.readFileSync(path.resolve('./PixiJS-Devtools-Chrome-Web-Store.crx'), 'base64')
             ]
         },
-        "goog:loggingPrefs": {
-            browser: "INFO",
-        },
     }],
-    logLevel: 'debug',
     services: [['devtools']],
-    framework: 'mocha',
-    mochaOpts: {
-        ui: 'bdd',
-        timeout: 1000000
-    }
 }
