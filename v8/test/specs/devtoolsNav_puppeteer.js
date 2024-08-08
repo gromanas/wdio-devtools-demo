@@ -27,13 +27,13 @@ describe("Devtools using Puppeteer", function() {
         await devtoolsPage.keyboard.press('[');
         await devtoolsPage.keyboard.up('Meta');
 
-        await browser.pause(5000);
-
         // Get all the iframes from Devtools window related with the current open tab
         const frames = devtoolsPage.frames();
 
         // Switch to devtool extension iframe.
-        const iframe = await frames[2];
+        const iframe = await frames[1];
+
+        await browser.pause(2000);
 
         // Use puppetter commands to execute some expressions directly in the Devtools extensions window
         // NOTE: https://pptr.dev/api/puppeteer.page.evaluate
